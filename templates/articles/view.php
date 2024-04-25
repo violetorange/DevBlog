@@ -1,7 +1,7 @@
 <?php include __DIR__ . '/../header.php'; ?>
 
     <h1><?= $article->getName() ?></h1>
-    <p><?= $article->getText() ?></p>
+    <p><?= $article->getParsedText() ?></p>
     <p><b>Автор: <?= $article->getAuthor()->getNickname() ?></b></p>
     <? if ($isAdmin) { ?>
         <a href="/articles/<?= $articleId ?>/edit">Редактировать статью</a>

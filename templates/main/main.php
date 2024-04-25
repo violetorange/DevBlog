@@ -11,7 +11,7 @@
             <div class="post-info">
                 <span><?= date("M d, Y", strtotime($article->getDate())); ?> / by <a><?= $article->getAuthor()->getNickname() ?></a></span>
             </div>  
-            <p><?= $article->getText() ?></p>                          			
+            <p><?= $article->getParsedText() ?></p>                          			
             <a href="/articles/<?= $article->getId() ?>" class="button button-style button-anim fa fa-long-arrow-right"><span>Читать</span></a>
             <hr>
         </div>

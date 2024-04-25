@@ -71,6 +71,10 @@ class Article extends ActiveRecordEntity
         return $this->createdAt;
     }
 
+    public function setDate() {
+        $this->createdAt = date('Y-m-d H:i:s');
+    }
+
     public static function createFromArray(array $fields, User $author): Article
     {
         if (empty($fields['name'])) {
@@ -108,5 +112,11 @@ class Article extends ActiveRecordEntity
         $this->save();
 
         return $this;
+    }
+
+    public function getParsedText(): string
+    {
+        $parser = new \Parsedown();
+        return $parser->text($this->getText());
     }
 }
